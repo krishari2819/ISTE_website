@@ -65,7 +65,11 @@ const App = () => {
 
   // Function to navigate to a specific section
   const handleNavigation = (path) => {
-    navigate(path); // Navigate to the specified path
+    if (isTeamPage && path.startsWith("#")) {
+      navigate(`/${path}`); // Remove /team and add the hash
+    } else {
+      navigate(path); // Navigate to the specified path
+    }
   };
 
   return (
