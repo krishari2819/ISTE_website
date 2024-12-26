@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Benefits from "./components/Benefits";
@@ -16,6 +16,7 @@ import AnnouncementSection from "./components/AnnouncementSection"; // Import An
 
 const App = () => {
   const location = useLocation(); // Get current route location
+  const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false); // Initially false, popup will show up only for /
 
   // Create refs for each section
@@ -62,9 +63,16 @@ const App = () => {
   // Define a flag to hide components when on the Team page
   const isTeamPage = location.pathname === "/team";
 
+  // Function to navigate to a specific section
+  const handleNavigation = (path) => {
+    navigate(path); // Navigate to the specified path
+  };
+
   return (
     <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-      <Header />
+      <Header 
+        onNavigate={handleNavigation} // Pass the navigation handler to Header
+      />
 
       {/* Conditionally show only Team page or all other content */}
       {isTeamPage ? (
