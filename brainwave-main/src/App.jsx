@@ -46,7 +46,7 @@ const App = () => {
       benefitsRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (location.pathname.includes("/about") && collaborationRef.current) {
       collaborationRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("/committee") && servicesRef.current) {
+    } else if (location.pathname.includes("#committee") && servicesRef.current) {
       servicesRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (location.pathname.includes("/registration") && pricingRef.current) {
       pricingRef.current.scrollIntoView({ behavior: "smooth" });
