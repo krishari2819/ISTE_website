@@ -67,6 +67,8 @@ const App = () => {
   const handleNavigation = (path) => {
     if (isTeamPage && path.startsWith("#")) {
       navigate(`/${path}`); // Remove /team and add the hash
+    } else if (path.startsWith("#")) {
+      navigate(path); // Navigate to hash on the current page
     } else {
       navigate(path); // Navigate to the specified path
     }
