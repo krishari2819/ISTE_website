@@ -40,11 +40,11 @@ import {
 
 // Navigation menu links
 export const navigation = [
-  { id: "0", title: "Features", url: "/features" },
-  { id: "1", title: "About Us", url: "/about" },
-  { id: "2", title: "Committee", url: "/committee" },
-  { id: "3", title: "Registration", url: "/registration" },
-  { id: "4", title: "Testimonial", url: "/testimonial" },
+  { id: "0", title: "Features", url: "#features" },
+  { id: "1", title: "About Us", url: "#about" },
+  { id: "2", title: "Committee", url: "#committee" },
+  { id: "3", title: "Registration", url: "#registration" },
+  { id: "4", title: "Testimonial", url: "#testimonial" },
 ];
 
 // Icons for hero section

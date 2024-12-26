@@ -1,7 +1,19 @@
 {
-    "rewrites": [
-      { "source": "/hero", "destination": "./src/components/Hero.jsx" },
-      { "source": "/features", "destination": "./src/components/Benefits.jsx" }
-    ]
-  }
-    
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "framework": "create-react-app"
+}

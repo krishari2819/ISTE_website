@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { Link } from "react-scroll";
+
 
 // import { brainwave } from "../assets";
 import { navigation } from "../constants";
@@ -55,7 +57,7 @@ const Header = () => {
           } fixed top-[5rem] z-50 left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:ml-auto lg:bg-transparent`}
         >
           <div className="relative z-2 flex flex-col items-center right-24 justify-center m-auto lg:flex-row lg:justify-center lg:space-x-4">
-            {navigation.map((item) => (
+            {/* {navigation.map((item) => (
               <a
                 key={item.id}
                 href={item.url}
@@ -70,7 +72,21 @@ const Header = () => {
               >
                 {item.title}
               </a>
-            ))}
+            ))} */}
+
+{navigation.map((item) => (
+  <Link
+    key={item.id}
+    to={item.url.substring(1)} // Remove the '#' for react-scroll
+    smooth={true}
+    duration={500}
+    offset={-70} // Adjust for header height
+    onClick={handleClick}
+    className="block relative font-code ..."
+  >
+    {item.title}
+  </Link>
+))}
           </div>
 
           <HamburgerMenu />
