@@ -42,17 +42,17 @@ const App = () => {
 
   // Scroll to section based on hash change
   useEffect(() => {
-    if (location.pathname.includes("#features") && benefitsRef.current) {
+    if (location.pathname.includes("/features") && benefitsRef.current) {
       benefitsRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("#about") && collaborationRef.current) {
+    } else if (location.pathname.includes("/about") && collaborationRef.current) {
       collaborationRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("#committee") && servicesRef.current) {
+    } else if (location.pathname.includes("/committee") && servicesRef.current) {
       servicesRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("#registration") && pricingRef.current) {
+    } else if (location.pathname.includes("/registration") && pricingRef.current) {
       pricingRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("#testimonial") && roadmapRef.current) {
+    } else if (location.pathname.includes("/testimonial") && roadmapRef.current) {
       roadmapRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("#announcements") && announcementRef.current) {
+    } else if (location.pathname.includes("/announcements") && announcementRef.current) {
       announcementRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
