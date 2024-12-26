@@ -37,7 +37,7 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[20rem] xl:mr-8 flex items-center" href="/hero">
+        <a className="block w-[20rem] xl:mr-8 flex items-center" href="#hero">
           <img
             src="./assets/benefits/ISTE-Logo.png"
             width={90}
