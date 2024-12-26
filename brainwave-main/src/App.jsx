@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Benefits from "./components/Benefits";
@@ -16,7 +16,7 @@ import AnnouncementSection from "./components/AnnouncementSection"; // Import An
 
 const App = () => {
   const location = useLocation(); // Get current route location
-  const [showPopup, setShowPopup] = useState(false); // Initially false, popup will show up only for /hero
+  const [showPopup, setShowPopup] = useState(false); // Initially false, popup will show up only for /
 
   // Create refs for each section
   const benefitsRef = useRef(null);
@@ -31,10 +31,10 @@ const App = () => {
     setShowPopup(false); // Hide the popup when user closes it
   };
 
-  // Show popup only when URL is /hero
+  // Show popup only when URL is /
   useEffect(() => {
-    if (location.pathname === "/hero") {
-      setShowPopup(true); // Show popup for /hero route
+    if (location.pathname === "/") {
+      setShowPopup(true); // Show popup for / route
     } else {
       setShowPopup(false); // Hide popup for other routes
     }
@@ -82,16 +82,11 @@ const App = () => {
           {/* Hero section stays visible on all routes except /team */}
           <Hero />
 
-          {/* Announcement Section below the Hero */}
-          {/* <AnnouncementSection /> */}
-
-          {/* Show Popup when the URL is /hero */}
+          {/* Show Popup when the URL is / */}
           {showPopup && <Popup onClose={handleClosePopup} />}
 
           <Routes>
-            {/* Redirect from / to /hero */}
-            <Route path="/" element={<Navigate to="/hero" />} />
-            <Route path="/hero" element={<></>} /> {/* Keep this path for /hero */}
+            <Route path="/" element={<></>} /> {/* Default path */}
             <Route path="/coreteam" element={<CoreTeam />} />
             <Route path="/team" element={<Team />} /> {/* Team page */}
           </Routes>
