@@ -1,0 +1,7 @@
+{
+    "rewrites": [
+      { "source": "/hero", "destination": "./src/components/Hero.jsx" },
+      { "source": "/features", "destination": "./src/components/Benefits.jsx" }
+    ]
+  }
+    

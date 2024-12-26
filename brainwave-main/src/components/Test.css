@@ -1,0 +1,99 @@
+/* Testimonial Section Container */
+.testimonial-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #4b0082 0%, #0000ff 100%);
+    background-blend-mode: normal;
+    color: #f0f0f0;
+}
+
+/* Carousel Container */
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* Testimonial Item */
+.testimonial-item {
+    text-align: center;
+    margin: 20px;
+    max-width: 300px;
+    flex: 1;
+}
+
+/* Testimonial Content */
+.testimonial-content {
+    background-color: #1e1e1e;
+    /* Dark card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Softer shadow for depth */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.testimonial-content:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+/* Testimonial Image */
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #00ffab;
+    /* Neon green border for the image */
+}
+
+/* Quote Icon Styling */
+.quote-icon {
+    position: absolute;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.2);
+    /* Softer white for background quotes */
+}
+
+.quote-left {
+    top: -20px;
+    left: 10px;
+}
+
+.quote-right {
+    bottom: -20px;
+    right: 10px;
+}
+
+/* Name and Position */
+h4 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #000;
+    /* Neon green text for name and position */
+}
+
+/* Testimonial Text */
+p {
+    font-size: 1rem;
+    color: #ccc;
+    /* Light grey text for better readability */
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-carousel {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,101 @@
+SliderStyles.css
+
+/* General styles for arrows */
+.arrow {
+    width: 60px;
+    /* Width of the button */
+    height: 60px;
+    /* Height of the button */
+
+    cursor: pointer;
+    /* Pointer cursor */
+    z-index: 100;
+    /* Ensure it's on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effects */
+/* .arrow:hover { */
+/* background-color: rgba(0, 0, 0, 0.2); */
+/* background: red; */
+/* Darker background on hover */
+/* Removed transform scale to keep the button in place */
+/* } */
+
+/* Specific positions for arrows */
+.next-arrow {
+    right: 15px;
+    /* Position on the right */
+}
+
+.prev-arrow {
+    left: 15px;
+    /* Position on the left */
+}
+
+/* Custom styles for arrow icons */
+.slick-prev:before,
+.slick-next:before {
+    display: none;
+    /* font-size: 0; */
+    /* Hide default arrow content */
+    /* display: block; */
+    /* Make it block for positioning */
+}
+
+.slick-next:hover {
+    color: red;
+}
+
+/* Custom arrow images */
+.slick-prev {
+    background-image: url('./leftarrow2.png');
+    /* Customize the left arrow icon */
+    background-size: 60%;
+    /* Size of the image */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent image repetition */
+}
+
+.slick-next {
+    background-image: url('./rightarrow2.png');
+    /* Customize the right arrow icon */
+    background-size: 60%;
+    /* Size of the image */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent image repetition */
+}
+
+/* Additional styling for the slider if needed */
+.slider {
+    position: relative;
+    /* Ensure relative positioning */
+}
+
+/* Modern Arrow Styles */
+.modern-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* .modern-arrow:hover {
+    transform: scale(1.1);
+} */
+
+.next-arrow {
+    right: 10px;
+}
+
+.prev-arrow {
+    left: 10px;
+}
