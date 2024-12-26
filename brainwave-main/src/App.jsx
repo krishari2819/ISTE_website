@@ -42,18 +42,13 @@ const App = () => {
 
   // Scroll to section based on hash change
   useEffect(() => {
-    if (location.pathname.includes("/features") && benefitsRef.current) {
-      benefitsRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("/about") && collaborationRef.current) {
-      collaborationRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("#committee") && servicesRef.current) {
-      servicesRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("/registration") && pricingRef.current) {
-      pricingRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("/testimonial") && roadmapRef.current) {
-      roadmapRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname.includes("/announcements") && announcementRef.current) {
-      announcementRef.current.scrollIntoView({ behavior: "smooth" });
+    const hash = window.location.hash; // Get the current hash
+    if (hash) {
+      const id = hash.substring(1); // Remove the '#' character
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the element
+      }
     }
   }, [location]);
 
@@ -92,22 +87,22 @@ const App = () => {
           </Routes>
 
           {/* Render the other components conditionally based on the current page */}
-          <div ref={announcementRef}>
+          <div id="announcements" ref={announcementRef}>
             <AnnouncementSection />
           </div>
-          <div ref={benefitsRef}>
+          <div id="features" ref={benefitsRef}>
             <Benefits />
           </div>
-          <div ref={collaborationRef}>
+          <div id="about" ref={collaborationRef}>
             <Collaboration />
           </div>
-          <div ref={servicesRef}>
+          <div id="committee" ref={servicesRef}>
             <Services />
           </div>
-          <div ref={pricingRef}>
+          <div id="registration" ref={pricingRef}>
             <Pricing />
           </div>
-          <div ref={roadmapRef}>
+          <div id="testimonial" ref={roadmapRef}>
             <Roadmap />
           </div>
 
