@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Section from './Section'; // Wrapping the section in the provided Section component
+import React, { useEffect, useState } from "react";
+import Section from "./Section";
 
 const AnnouncementSection = () => {
-  const [visible, setVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -12,17 +11,17 @@ const AnnouncementSection = () => {
       title: "🎉 Flash Mob Frenzy!",
       description: "Join us at Chandigarh University for electrifying flash mobs!",
       dates: "🗓 Dates:\n - 16th Oct: D1 Downstairs, 4 PM\n - 17th Oct: Corner Cafe, 4 PM\n - 21st Oct: Fountain Park, 3:30 PM",
-      eventDetails: "✨ Showcase your talent and shine on stage! Let's make this event unforgettable! 🎶💃🕺",
-      img: './assets/benefits/eventposter.png', // Placeholder image
-      registrationLink: "https://your-registration-link.com/flash-mob" // Registration link for this event
+      eventDetails:
+        "✨ Showcase your talent and shine on stage! Let's make this event unforgettable! 🎶💃🕺",
+      img: "./assets/benefits/eventposter.png",
+      registrationLink: "https://your-registration-link.com/flash-mob",
     },
     {
       id: 2,
       title: "🚀 Event Coming Soon!",
-      img: 'https://via.placeholder.com/400x300?text=Hackathon+Event', // Placeholder image
-      registrationLink: "https://your-registration-link.com/hackathon" // Registration link for this event
+      img: "https://via.placeholder.com/400x300?text=Hackathon+Event",
+      registrationLink: "https://your-registration-link.com/hackathon",
     },
-    // Add more events as needed
   ];
 
   const handleNext = () => {
@@ -31,7 +30,7 @@ const AnnouncementSection = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % containers.length);
         setIsAnimating(false);
-      }, 500); // Adjust the time to match the animation duration
+      }, 500);
     }
   };
 
@@ -39,47 +38,81 @@ const AnnouncementSection = () => {
     if (!isAnimating) {
       setIsAnimating(true);
       setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + containers.length) % containers.length);
+        setCurrentIndex(
+          (prevIndex) => (prevIndex - 1 + containers.length) % containers.length
+        );
         setIsAnimating(false);
-      }, 500); // Adjust the time to match the animation duration
+      }, 500);
     }
   };
 
   return (
     <Section id="announcement">
-      <div className="w-10/12 bg-n-8 text-white py-12">
-        <div className="container mx-auto px-4 lg:px-15 max-w-full"> {/* Set the container to max-w-full */}
-          <h2 className="text-3xl font-bold text-center ml-80 mb-4">Upcoming Events</h2>
+      <div className="w-11/12 mx-auto bg-n-8 text-white py-12">
+        <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+          <h2 className="text-2xl lg:text-3xl font-bold text-center mb-6">
+            Upcoming Events
+          </h2>
 
-          <div className="flex justify-between items-center w-full"> {/* Ensure the width is 100% */}
-            <button onClick={handlePrev} className="text-2xl font-bold pl-56 text-white">{"<"}</button>
+          <div className="flex flex-col lg:flex-row items-center w-full gap-4">
+            <button
+              onClick={handlePrev}
+              className="text-2xl font-bold text-white p-2 lg:p-4"
+            >
+              {"<"}
+            </button>
 
-            <div className={`flex bg-n-8 rounded-lg shadow-lg p-4 w-full ${isAnimating ? 'fade-out' : 'fade-in'}`} key={containers[currentIndex].id}> {/* Make the carousel wider */}
-              <div className="flex-1 p-4 max-w-1/2"> {/* Limit the image width to 50% */}
+            <div
+              className={`flex flex-col lg:flex-row bg-n-8 rounded-lg shadow-lg p-4 w-full ${
+                isAnimating ? "fade-out" : "fade-in"
+              }`}
+              key={containers[currentIndex].id}
+            >
+              <div className="lg:flex-1 p-2 lg:p-4">
                 <img
                   src={containers[currentIndex].img}
                   alt="Event Poster"
-                  className="w-full h-full rounded-lg object-contain transition-transform duration-500 ease-in-out hover:opacity-80"
-                  style={{ height: '400px', transform: visible ? 'scale(1)' : 'scale(0.9)' }}
+                  className="w-full h-auto rounded-lg object-cover transition-transform duration-500 ease-in-out hover:opacity-80"
+                  style={{
+                    maxHeight: "300px",
+                  }}
                 />
               </div>
 
-              <div className="flex-1 p-4 flex flex-col justify-between max-w-1/2" style={{ height: '400px' }}> {/* Limit the text container width to 50% */}
+              <div className="lg:flex-1 p-2 lg:p-4 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-10">{containers[currentIndex].title}</h3>
-                  <p className="text-n-3 mb-2">{containers[currentIndex].description}</p>
-                  <p className="text-n-3 mb-2">{containers[currentIndex].dates}</p>
-                  <p className="text-n-3">{containers[currentIndex].eventDetails}</p>
+                  <h3 className="text-xl lg:text-2xl font-semibold mb-4">
+                    {containers[currentIndex].title}
+                  </h3>
+                  <p className="text-sm lg:text-base mb-2">
+                    {containers[currentIndex].description}
+                  </p>
+                  <p className="text-sm lg:text-base mb-2 whitespace-pre-line">
+                    {containers[currentIndex].dates}
+                  </p>
+                  <p className="text-sm lg:text-base">
+                    {containers[currentIndex].eventDetails}
+                  </p>
                 </div>
-                <a href={containers[currentIndex].registrationLink} target="_blank" rel="noopener noreferrer">
-                  <button className="mt-4 bg-purple-700 text-white py-2 px-4 rounded-lg font-semibold hover:bg-purple-950">
+                <a
+                  href={containers[currentIndex].registrationLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4"
+                >
+                  <button className="bg-purple-700 text-white py-2 px-4 rounded-lg text-sm lg:text-base font-semibold hover:bg-purple-800 w-full lg:w-auto">
                     Register Now
                   </button>
                 </a>
               </div>
             </div>
 
-            <button onClick={handleNext} className="text-2xl font-bold text-white">{">"}</button>
+            <button
+              onClick={handleNext}
+              className="text-2xl font-bold text-white p-2 lg:p-4"
+            >
+              {">"}
+            </button>
           </div>
         </div>
 
@@ -93,13 +126,21 @@ const AnnouncementSection = () => {
           }
 
           @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
           }
 
           @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
+            from {
+              opacity: 1;
+            }
+            to {
+              opacity: 0;
+            }
           }
         `}</style>
       </div>
