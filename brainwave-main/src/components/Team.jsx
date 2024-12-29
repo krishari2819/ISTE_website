@@ -72,7 +72,11 @@ const coreTeamData = [
   {
     department: "Operational Team",
     members: [
+      { name: "Deepanshu Sharma", role: "Senior Lead", image: teamImages.operationalTeam.DeepanshuSharma },
       { name: "Prabhleen Kaur", role: "Junior Lead", image: teamImages.operationalTeam.prabhleenKaur },
+      { name: "Taranvir Singh", role: "Junior Lead", image: teamImages.operationalTeam.TaranvirSingh },
+      { name: "Heena", role: "Junior Lead", image: teamImages.operationalTeam.Heena },
+      { name: "Tanya Verma", role: "Junior Lead", image: teamImages.operationalTeam.TanyaVerma },
     ],
   },
   {
