@@ -290,10 +290,10 @@ export const teamImages = {
   },
   operationalTeam: {
     prabhleenKaur: "./assets/team/PK.jpeg",
-    TaranvirSingh: "./assets/team/TS.JPG",
-    TanyaVerma: "./assets/team/TV.JPG",
-    Heena: "./assets/team/Heena.JPG",
-    DeepanshuSharma: "./assets/team/DS.JPG",
+    TaranvirSingh: "./assets/team/TS.jpg",
+    TanyaVerma: "./assets/team/TV.jpg",
+    Heena: "./assets/team/Heena.jpg",
+    DeepanshuSharma: "./assets/team/DS.jpg",
   },
   multimediaTeam: {
     suhaniBajjard: "./assets/team/SB.png",
