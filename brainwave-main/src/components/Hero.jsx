@@ -16,7 +16,7 @@ const Hero = ({
   headline = "Pushing Boundaries, Discover, Explore, and Shape possibilities with ISTE",
   subHeadline = "",
   ctaText = "Get started",
-  ctaLink = "/pricing",
+  ctaLink = "https://forms.gle/3cHuuAQdSivxNmvdA",
 }) => {
   const parallaxRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -61,9 +61,11 @@ const Hero = ({
               {subHeadline}
             </p>
           )}
-          <Button href={ctaLink} white>
-            {ctaText}
-          </Button>
+          <div className="relative" style={{ zIndex: 100 }}>
+    <Button href={ctaLink} white>
+      {ctaText}
+    </Button>
+  </div>
         </div>
 
         {/* // Slider Section */}

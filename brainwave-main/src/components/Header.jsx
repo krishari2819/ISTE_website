@@ -77,7 +77,7 @@ const Header = ({ onNavigate }) => {
           <HamburgerMenu />
         </nav>
 
-        <Button className="hidden lg:flex ml-auto" href="https://forms.gle/n8uYNQZ6g3QNsDjr6">
+        <Button className="hidden lg:flex ml-auto" href="https://forms.gle/3cHuuAQdSivxNmvdA">
           Join Us
         </Button>
 

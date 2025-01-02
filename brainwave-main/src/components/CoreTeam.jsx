@@ -1,40 +1,43 @@
 import Section from "./Section";
 import { useNavigate } from "react-router-dom"; // Assuming you're using react-router-dom for navigation
-import team from "./Team";
-
 
 const coreMembers = [
   {
     name: "Sahil Wadhwa",
     role: "President",
-    image: "./assets/team/SW.JPG" // Change this path based on Vite's asset handling
+    image: "./assets/team/SW.JPG",
+    linkedin: "https://www.linkedin.com/in/sahil-wadhwa-950ba2249/"
   },
   {
     name: "Ayush Pathania",
     role: "Vice President",
-    image: "./assets/team/AP.jpeg"
+    image: "./assets/team/AP.jpeg",
+    linkedin: "https://www.linkedin.com/in/ayush-pathania-9a025b31b/"
   },
   {
     name: "Srishti",
     role: "General Secretary",
-    image: "./assets/team/SN.jpeg"
+    image: "./assets/team/SN.jpeg",
+    linkedin: "https://www.linkedin.com/in/srishti-nautiyal-b30920244/"
   },
   {
     name: "RS Krishna",
     role: "Joint Secretary",
-    image: "./assets/team/RSK.jpg"
+    image: "./assets/team/RSK.jpg",
+    linkedin: "https://www.linkedin.com/in/rs-krishna"
   },
   {
     name: "Dinky",
     role: "Joint Secretary",
-    image: "./assets/team/DK.jpg"
+    image: "./assets/team/DK.jpg",
+    linkedin: "https://www.linkedin.com/in/dinky-khurana-829246293/"
   },
   {
     name: "Amit Kumar",
     role: "Joint Secretary",
-    image: "./assets/team/AK.png"
-  },
-  
+    image: "./assets/team/AK.png",
+    linkedin: "https://www.linkedin.com/in/amit-kumar-2a728229a/"
+  }
 ];
 
 export default function CoreTeam() {
@@ -50,7 +53,13 @@ export default function CoreTeam() {
         <h1 className="text-4xl font-bold mb-4">Core Team</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl">
           {coreMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center bg-gray-900 rounded-lg p-6">
+            <a
+              key={index}
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center bg-gray-900 rounded-lg p-6 hover:shadow-lg hover:scale-105 transition-transform duration-300"
+            >
               <img
                 src={member.image}
                 alt={member.name}
@@ -60,7 +69,7 @@ export default function CoreTeam() {
               />
               <h3 className="text-lg font-semibold text-center">{member.name}</h3>
               <p className="text-gray-400 text-center">{member.role}</p>
-            </div>
+            </a>
           ))}
         </div>
 
