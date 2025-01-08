@@ -83,6 +83,7 @@ const coreTeamData = [
     department: "Multimedia Team",
     members: [
       { name: "Suhani Bajjard", role: "Member (Design)", image: teamImages.multimediaTeam.suhaniBajjard },
+      { name: "Nishant Raj", role: "Member (Design)", image: teamImages.multimediaTeam.nishantRaj },
       { name: "Moinak Niyogi", role: "Member (Content)", image: teamImages.multimediaTeam.moinakNiyogi },
     ],
   },

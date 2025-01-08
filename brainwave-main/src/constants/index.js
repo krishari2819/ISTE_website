@@ -297,6 +297,7 @@ export const teamImages = {
   },
   multimediaTeam: {
     suhaniBajjard: "./assets/team/SB.png",
+    nishantRaj: "./assets/team/NR.jpg",
     moinakNiyogi: "./assets/team/MN.jpg",
   },
 };
