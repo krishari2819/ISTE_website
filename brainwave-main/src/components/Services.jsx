@@ -26,9 +26,8 @@ export default function TeamSection() {
         <div className=" max-w-5xl flex justify-center space-x-8 ">
           {teamMembers.slice(0, 2).map((member, index) => (
             <div key={index} className="flex-none w-1/2 px-4 hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                <a key = {index} href={member.linkedin} target="_blank" rel="noopener noreferrer">
               <div className="flex flex-col items-center bg-gray-900 rounded-lg p-8 h-[350px]">
-                <a key = {index} href={member.linkedin} target="_blank" rel="noopener noreferrer"
-              >
                 <img
                   src={member.image}
                   alt={member.name}
@@ -36,13 +35,13 @@ export default function TeamSection() {
                   height={150}
                   className="rounded-lg mb-4"
                 />
-                </a>
                 
                 <h3 className="text-lg font-semibold text-center">
                   {member.name}
                 </h3>
                 <p className="text-gray-400 text-center">{member.role}</p>
               </div>
+                </a>
             </div>
           ))}
         </div>

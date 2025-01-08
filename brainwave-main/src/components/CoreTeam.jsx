@@ -44,7 +44,7 @@ export default function CoreTeam() {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/team"); // Navigate to the /team route
+    window.open("/team", "_blank"); // Navigate to the /team route
   };
 
   return (

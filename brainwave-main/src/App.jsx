@@ -13,7 +13,7 @@ import CoreTeam from "./components/CoreTeam";
 import Team from "./components/Team";
 import Popup from "./components/Popup"; // Import the Popup component
 import AnnouncementSection from "./components/AnnouncementSection"; // Import AnnouncementSection component
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const location = useLocation(); // Get current route location
@@ -64,45 +64,22 @@ const App = () => {
   // Define a flag to hide components when on the Team page
   const isTeamPage = location.pathname === "/team";
 
-  // Function to navigate to a specific section
-  const handleNavigation = (path) => {
-    if (isTeamPage && path.startsWith("#")) {
-      navigate(`/${location.pathname}`); // Remove /team and add the hash
-      window.history.replaceState(null, "", location.pathname); // Update the URL to reflect the hash
-    } else if (path.startsWith("#")) {
-      navigate(path); // Navigate to hash on the current page
-    } else {
-      navigate(path); // Navigate to the specified path
-    }
-  };
-
   return (
     <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-      <Header 
-        onNavigate={handleNavigation} // Pass the navigation handler to Header
-      />
+      {/* Conditionally render the navigation bar */}
+      {!isTeamPage && (
+        <Header
+          onNavigate={(path) => navigate(path)} // Pass the navigation handler to Header
+        />
+      )}
 
-      {/* Conditionally show only Team page or all other content */}
-      {isTeamPage ? (
-        <>
-          <Team />
-          <Footer />
-        </>
-      ) : (
-        <>
+      <Routes>
+        <Route path="/" element={<>
           {/* Hero section stays visible on all routes except /team */}
           <Hero />
-
           {/* Show Popup when the URL is / */}
           {showPopup && <Popup onClose={handleClosePopup} />}
-
-          <Routes>
-            <Route path="/" element={<></>} /> {/* Default path */}
-            <Route path="/coreteam" element={<CoreTeam />} />
-            <Route path="/team" element={<Team />} /> {/* Team page */}
-          </Routes>
-
-          {/* Render the other components conditionally based on the current page */}
+          {/* Render other components */}
           <div id="announcements" ref={announcementRef}>
             <AnnouncementSection />
           </div>
@@ -121,11 +98,16 @@ const App = () => {
           <div id="testimonial" ref={roadmapRef}>
             <Roadmap />
           </div>
+        </>} />
+        <Route path="/coreteam" element={<CoreTeam />} />
+        <Route path="/team" element={<Team />} />
+      </Routes>
 
-          <Footer />
-          <ButtonGradient />
-        </>
-      )}
+      {/* Footer remains visible on all routes */}
+      <Footer />
+
+      {/* Gradient Button */}
+      {!isTeamPage && <ButtonGradient />}
       <Analytics />
     </div>
   );
