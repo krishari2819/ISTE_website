@@ -36,7 +36,6 @@ const coreTeamData = [
   {
     department: "Tech Team",
     members: [
-      { name: "Avish", role: "Team Lead", image: teamImages.techTeam.avish },
       { name: "RS Krishna", role: "Member", image: teamImages.techTeam.rsKrishna },
       { name: "Jatin Mittal", role: "Member", image: teamImages.techTeam.jatinMittal },
       { name: "Nivedita", role: "Member", image: teamImages.techTeam.nivedita },
@@ -49,22 +48,19 @@ const coreTeamData = [
   {
     department: "Event Planning & Management",
     members: [
-      { name: "Yatin Berry", role: "Member", image: teamImages.eventPlanning.yatinBerry },
+      { name: "Amit Kumar", role: "Member", image: teamImages.eventPlanning.amitKumar },
+      { name: "Dinky", role: "Member", image: teamImages.eventPlanning.dinky },
       { name: "Vansh Bhushan", role: "Member", image: teamImages.eventPlanning.vanshBhushan },
       { name: "Vasudha Sharma", role: "Member", image: teamImages.eventPlanning.vasudhaSharma },
       { name: "Abhijeet Singh", role: "Member", image: teamImages.eventPlanning.abhijeetSingh },
       { name: "Romita Das", role: "Member", image: teamImages.eventPlanning.romitaDas },
       { name: "Anay Raj Gupta", role: "Member", image: teamImages.eventPlanning.anayRajGupta },
       { name: "Tushar", role: "Member", image: teamImages.eventPlanning.tushar },
-      { name: "Amit Kumar", role: "Member", image: teamImages.eventPlanning.amitKumar },
-      { name: "Dinky", role: "Member", image: teamImages.eventPlanning.dinky },
-      { name: "Tanisha Mahajan", role: "Member", image: teamImages.eventPlanning.tanishaMahajan },
     ],
   },
   {
     department: "Social Media Team",
     members: [
-      { name: "Saksham Goyal", role: "Team Lead", image: teamImages.socialMediaTeam.sakshamGoyal },
       { name: "Sridha Reddy", role: "Member", image: teamImages.socialMediaTeam.sridhaReddy },
       { name: "Shaik Mohammed Zayed", role: "Member", image: teamImages.socialMediaTeam.shaikZayed },
     ],
@@ -82,8 +78,8 @@ const coreTeamData = [
   {
     department: "Multimedia Team",
     members: [
-      { name: "Suhani Bajjard", role: "Member (Design)", image: teamImages.multimediaTeam.suhaniBajjard },
       { name: "Nishant Raj", role: "Member (Design)", image: teamImages.multimediaTeam.nishantRaj },
+      { name: "Suhani Bajjard", role: "Member (Design)", image: teamImages.multimediaTeam.suhaniBajjard },
       { name: "Moinak Niyogi", role: "Member (Content)", image: teamImages.multimediaTeam.moinakNiyogi },
     ],
   },
