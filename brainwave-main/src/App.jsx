@@ -13,6 +13,7 @@ import CoreTeam from "./components/CoreTeam";
 import Team from "./components/Team";
 import Popup from "./components/Popup"; // Import the Popup component
 import AnnouncementSection from "./components/AnnouncementSection"; // Import AnnouncementSection component
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const location = useLocation(); // Get current route location
@@ -125,6 +126,7 @@ const App = () => {
           <ButtonGradient />
         </>
       )}
+      <Analytics />
     </div>
   );
 };

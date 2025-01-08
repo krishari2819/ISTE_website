@@ -43,7 +43,7 @@ const Hero = ({
       id="hero"
     >
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+        <div className="relative z-101 mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
             {headline}{" "}
             <span className="inline-block relative">
@@ -61,11 +61,14 @@ const Hero = ({
               {subHeadline}
             </p>
           )}
-          <div className="relative" style={{ zIndex: 100 }}>
-    <Button href={ctaLink} white>
-      {ctaText}
-    </Button>
-  </div>
+          <div 
+  className="relative z-101" 
+  style={{ position: "relative" }}>
+  <Button href={ctaLink} white>
+    {ctaText}
+  </Button>
+</div>
+
         </div>
 
         {/* // Slider Section */}
